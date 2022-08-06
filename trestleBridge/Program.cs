@@ -32,7 +32,6 @@ static void Start()
         Console.WriteLine("Choose a FARMS option");
         Console.Write("> ");
         string option = Console.ReadLine();
-        Console.Clear();
         if (option == "1")
         {
             DisplayBanner();
@@ -50,7 +49,6 @@ static void Start()
             Console.WriteLine("\n\n\n");
             Console.WriteLine("Press return key to go back to main menu.");
             Console.ReadLine();
-            Console.Clear();
         }
         else if (option == "5")
         {

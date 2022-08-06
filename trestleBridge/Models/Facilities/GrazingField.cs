@@ -1,11 +1,15 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using trestleBridge.Interfaces;
 
 namespace trestleBridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 20;
+        private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
@@ -20,12 +24,14 @@ namespace trestleBridge.Models.Facilities
 
         public void AddResource(IGrazing animal)
         {
-            _animals.Add(animal);
+            // TODO: implement this...
+            throw new NotImplementedException();
         }
 
         public void AddResource(List<IGrazing> animals)
         {
-            animals.ForEach(x => _animals.Add(x));
+            // TODO: implement this...
+            throw new NotImplementedException();
         }
         public override string ToString()
         {
