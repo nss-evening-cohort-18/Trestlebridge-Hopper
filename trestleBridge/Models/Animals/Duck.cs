@@ -2,7 +2,7 @@
 
 namespace trestleBridge.Models.Animals
 {
-    public class Ostrich : IResource, IGrazing, IMeatProducing
+    public class Duck : IResource, IGrazing, IMeatProducing
     {
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 2.6;
@@ -15,12 +15,12 @@ namespace trestleBridge.Models.Animals
             }
         }
         public double GrassPerDay { get; set; } = 2.3;
-        public string Type { get; } = "Ostrich";
+        public string Type { get; } = "Duck";
 
         // Methods
         public void Graze()
         {
-            Console.WriteLine($"Ostrich {this._shortId} just ate {this.GrassPerDay}kg of grass");
+            Console.WriteLine($"Duck {this._shortId} just ate {this.GrassPerDay}kg of grass");
         }
 
         public double Butcher()
@@ -30,7 +30,7 @@ namespace trestleBridge.Models.Animals
 
         public override string ToString()
         {
-            return $"Ostrich {this._shortId}. Squack!";
+            return $"Duck {this._shortId}. Quack!";
         }
     }
 }

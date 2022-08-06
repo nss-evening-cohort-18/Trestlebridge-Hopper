@@ -1,7 +1,4 @@
-﻿using System;
-using trestleBridge.Interfaces;
-
-namespace trestleBridge.Actions
+﻿namespace trestleBridge.Actions
 {
     public class ChooseGrazingField
     {
@@ -27,6 +24,8 @@ namespace trestleBridge.Actions
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
         }
+
+
     }
 }
 
