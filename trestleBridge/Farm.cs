@@ -11,6 +11,10 @@ namespace trestleBridge
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
+        public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
+        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
         /*
             This method must specify the correct product interface of the
@@ -34,11 +38,32 @@ namespace trestleBridge
             GrazingFields.Add(field);
         }
 
+        public void AddNaturalField(NaturalField field)
+        {
+            NaturalFields.Add(field);
+        }
+        public void AddPlowedField(PlowedField field)
+        {
+            PlowedFields.Add(field);
+        }
+        public void AddDuckHosue(DuckHouse house)
+        {
+            DuckHouses.Add(house);
+        }
+        public void AddChickenHouse(ChickenHouse house)
+        {
+            ChickenHouses.Add(house);
+        }
+
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            PlowedFields.ForEach(pf => report.Append(pf));
+            NaturalFields.ForEach(nf => report.Append(nf));
+            DuckHouses.ForEach(dh => report.Append(dh));
+            ChickenHouses.ForEach(ch => report.Append(ch));
 
             return report.ToString();
         }

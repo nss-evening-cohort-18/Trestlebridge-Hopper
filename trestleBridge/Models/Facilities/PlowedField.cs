@@ -7,12 +7,12 @@ using trestleBridge.Interfaces;
 
 namespace trestleBridge.Models.Facilities
 {
-    public class ChickenHouse : IFacility<IFowl>
+    public class PlowedField : IFacility<IPlant>
     {
-        private int _capacity = 15;
+        private int _capacity = 65;
         private Guid _id = Guid.NewGuid();
 
-        private List<IFowl> _animals = new List<IFowl>();
+        private List<IPlant> _plants = new List<IPlant>();
 
         public double Capacity
         {
@@ -22,21 +22,21 @@ namespace trestleBridge.Models.Facilities
             }
         }
 
-        public void AddResource(IFowl animal)
+        public void AddResource(IPlant plant)
         {
-            _animals.Add(animal);
+            _plants.Add(plant);
         }
 
-        public void AddResource(List<IFowl> animals)
+        public void AddResource(List<IPlant> plants)
         {
-            animals.ForEach(x => _animals.Add(x));
+            plants.ForEach(x => _plants.Add(x));
         }
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-            output.Append($"Chicken House {shortId} has {this._animals.Count} animals\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Plowed Field {shortId} has {this._plants.Count} plants\n");
+            this._plants.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
     }
