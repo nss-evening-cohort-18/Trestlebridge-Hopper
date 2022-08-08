@@ -42,6 +42,10 @@ static void Start()
         {
             DisplayBanner();
             PurchaseStock.CollectInput(Trestlebridge);
+        }else if(option == "3")
+        {
+            DisplayBanner();
+            PurchaseSeed.CollectInput(Trestlebridge);
         }
         else if (option == "4")
         {
