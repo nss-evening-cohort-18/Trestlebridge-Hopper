@@ -33,6 +33,7 @@ namespace trestleBridge.Actions
                     ChoosePlowedField.CollectInput(farm, new Sesame());
                     break;
                 default:
+                    Console.Clear();
                     break;
             }
         }

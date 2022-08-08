@@ -9,7 +9,8 @@ namespace trestleBridge.Models.Facilities
 {
     public class NaturalField : IFacility<IFlower>
     {
-        private int _capacity = 1;
+        private int _rowCapacity = 10;
+        private int _plantPerRow = 6;
         private Guid _id = Guid.NewGuid();
 
         private List<IFlower> _plants = new List<IFlower>();
@@ -18,7 +19,7 @@ namespace trestleBridge.Models.Facilities
         {
             get
             {
-                return _capacity;
+                return _rowCapacity;
             }
         }
 

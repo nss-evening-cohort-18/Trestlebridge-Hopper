@@ -19,6 +19,7 @@ namespace trestleBridge.Models.Flowers
         // Properties
 
         public string Type { get; } = "Sesame";
+        public int SeedsProduced { get; } = 520;
 
         // Methods
     }

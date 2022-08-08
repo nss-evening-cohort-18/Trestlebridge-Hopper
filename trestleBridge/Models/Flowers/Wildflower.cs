@@ -24,6 +24,7 @@ namespace trestleBridge.Models.Flowers
         // Properties
 
         public string Type { get; } = "Wildflower";
+        public double CompostProduced { get; } = 30.3;
 
         // Methods
     }
