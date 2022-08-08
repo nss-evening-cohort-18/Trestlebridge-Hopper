@@ -7,12 +7,12 @@ using trestleBridge.Interfaces;
 
 namespace trestleBridge.Models.Facilities
 {
-    public class NaturalField : IFacility<IPlant>
+    public class NaturalField : IFacility<IFlower>
     {
-        private int _capacity = 60;
+        private int _capacity = 1;
         private Guid _id = Guid.NewGuid();
 
-        private List<IPlant> _plants = new List<IPlant>();
+        private List<IFlower> _plants = new List<IFlower>();
 
         public double Capacity
         {
@@ -22,12 +22,20 @@ namespace trestleBridge.Models.Facilities
             }
         }
 
-        public void AddResource(IPlant plant)
+        public double CurrectCount
+        {
+            get
+            {
+                return _plants.Count();
+            }
+        }
+
+        public void AddResource(IFlower plant)
         {
             _plants.Add(plant);
         }
 
-        public void AddResource(List<IPlant> plants)
+        public void AddResource(List<IFlower> plants)
         {
             plants.ForEach(x => _plants.Add(x));
         }
@@ -35,8 +43,8 @@ namespace trestleBridge.Models.Facilities
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-            output.Append($"Natural Field {shortId} has {this._plants.Count} plants\n");
-            this._plants.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural Field {shortId} has {this._plants.Count} rows of plants\n");
+            //this._plants.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
     }

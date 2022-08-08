@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace trestleBridge.Interfaces
 {
-    public interface IPlant
+    public interface IFlower
     {
-        
+        string Type { get; }
     }
 }
