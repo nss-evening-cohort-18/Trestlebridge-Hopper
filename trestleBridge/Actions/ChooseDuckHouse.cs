@@ -1,5 +1,4 @@
 ﻿using trestleBridge.Interfaces;
-using trestleBridge.Models.Animals;
 
 namespace trestleBridge.Actions
 {
@@ -10,12 +9,12 @@ namespace trestleBridge.Actions
 
         }
 
-        static void CollectInput(Farm farm, IGrazing animal)
+        public static void CollectInput(Farm farm, IFowl animal)
         {
             // Console.Clear();
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
+                Console.WriteLine($"{i + 1}. Duck house");
             }
             Console.WriteLine();
             // How can I output the type of animal chosen here?
@@ -24,7 +23,7 @@ namespace trestleBridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.GrazingFields[choice].AddResource(animal);
+            farm.DuckHouses[choice - 1].AddResource(animal);
 
             /*
                 Couldn't get this to work. Can you?
@@ -33,10 +32,6 @@ namespace trestleBridge.Actions
             // farm.PurchaseResource<IGrazing>(animal, choice);
         }
 
-        internal static void CollectInput(Farm farm, Duck duck)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
