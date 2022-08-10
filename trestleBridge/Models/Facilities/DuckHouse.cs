@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using trestleBridge.Interfaces;
 
 namespace trestleBridge.Models.Facilities
@@ -19,7 +15,13 @@ namespace trestleBridge.Models.Facilities
             get
             {
                 return _capacity;
+
             }
+
+        }
+        public double CurrentCount
+        {
+            get { return _animals.Count(); }
         }
 
         public void AddResource(IFowl animal)

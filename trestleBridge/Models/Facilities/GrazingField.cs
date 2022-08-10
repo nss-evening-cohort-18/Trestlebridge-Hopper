@@ -17,6 +17,10 @@ namespace trestleBridge.Models.Facilities
                 return _capacity;
             }
         }
+        public double CurrentCount
+        {
+            get { return _animals.Count(); }
+        }
 
         public void AddResource(IGrazing animal)
         {

@@ -14,12 +14,19 @@ namespace trestleBridge.Actions
             // Console.Clear();
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Duck house");
+                if (farm.DuckHouses[i].CurrentCount < 12)
+                {
+                    Console.WriteLine($"{i + 1}. Duck House  ({farm.DuckHouses[i].CurrentCount} animals)");
+                }
+                else
+                {
+                    Console.WriteLine($@"****That facililty is not large enough * ***
+                                         ****Please choose another one * ***");
+                }
             }
             Console.WriteLine();
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place {animal.Type.ToLower()} where?");
-
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
@@ -31,6 +38,7 @@ namespace trestleBridge.Actions
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
         }
+
 
     }
 }
