@@ -29,11 +29,41 @@ namespace trestleBridge.Models.Facilities
         }
         public override string ToString()
         {
+            int count = 1;
+            string stringReturn = "(";
+            Dictionary<string, int> AnimalRank = new();
+            foreach (IGrazing animal in _animals)
+            {
+                if (AnimalRank.ContainsKey(animal.Type))
+                {
+                    AnimalRank[animal.Type]++;
+                } else
+                {
+                    AnimalRank.Add(animal.Type, 1);
+                }
+            }
+            AnimalRank.OrderByDescending(x => x.Value);
+            
+            foreach (var animal in AnimalRank)
+            {
+                if(count != AnimalRank.Count)
+                {
+                stringReturn += $"{animal.Key}: {animal.Value}, ";
+                    count++;
+                } else
+                {
+                    stringReturn += $"{animal.Key}: {animal.Value}";
+                }
+            }
+            stringReturn += ")";
+
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-            output.Append($"Grazing field {shortId} has {this._animals.Count} animals\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Grazing field {shortId} {(_animals.Count() == 0 ? "(0 animals)" : stringReturn)}\n");
+            //this._animals.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
+
+        
     }
 }

@@ -19,6 +19,7 @@ namespace trestleBridge.Actions
             int choice = Int32.Parse(Console.ReadLine());
 
             farm.GrazingFields[choice - 1].AddResource(animal);
+            Console.Clear();
 
             /*
                 Couldn't get this to work. Can you?

@@ -35,8 +35,8 @@ namespace trestleBridge.Models.Facilities
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
-            output.Append($"Duck House {shortId} has {this._animals.Count} animals\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Duck House {shortId} ({this._animals.Count} {(_animals.Count() == 1 ? "Duck" : "Ducks")})\n");
+           // this._animals.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
     }
