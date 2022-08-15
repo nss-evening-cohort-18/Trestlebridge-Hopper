@@ -10,7 +10,15 @@ namespace trestleBridge.Actions
             // Console.Clear();
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
+                if (farm.GrazingFields[i].CurrentCount < 20)
+                {
+                    Console.WriteLine($"{i + 1}. Grazing Field  ({farm.GrazingFields[i].CurrentCount} animals)");
+                }
+                else
+                {
+                    Console.WriteLine($@"****That facililty is not large enough * ***
+                                         ****Please choose another one * ***");
+                }
             }
             Console.WriteLine();
             // How can I output the type of animal chosen here?
