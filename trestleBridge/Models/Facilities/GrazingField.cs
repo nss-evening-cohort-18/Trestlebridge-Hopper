@@ -18,6 +18,15 @@ namespace trestleBridge.Models.Facilities
             }
         }
 
+        public double CurrectCount
+        {
+            get
+            {
+                return _animals.Count();
+            }
+        }
+
+
         public void AddResource(IGrazing animal)
         {
             _animals.Add(animal);
@@ -63,7 +72,5 @@ namespace trestleBridge.Models.Facilities
             //this._animals.ForEach(a => output.Append($"   {a}\n"));
             return output.ToString();
         }
-
-        
     }
 }

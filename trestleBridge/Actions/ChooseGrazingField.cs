@@ -1,4 +1,5 @@
 ﻿using trestleBridge.Interfaces;
+using trestleBridge.Models.Facilities;
 
 namespace trestleBridge.Actions
 {
@@ -26,6 +27,20 @@ namespace trestleBridge.Actions
                 Stretch goal. Only if the app is fully functional.
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
+        }
+
+        public static GrazingField ProcessingOptions(Farm farm)
+        {
+            for (int i = 0; i < farm.GrazingFields.Count(); i++)
+            {
+                Console.WriteLine($"{i + 1}. Grazing Field ({farm.GrazingFields[i].CurrectCount} Animals)");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Which facility has the animals you want to process from?\n");
+            Console.Write("> ");
+            string option = Console.ReadLine();
+
+            return farm.GrazingFields[Int32.Parse(option) - 1];
         }
 
 

@@ -5,7 +5,7 @@ namespace trestleBridge.Models.Animals
     public class Chicken : IResource, IFowl, IMeatProducing
     {
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 2.6;
+        private double _meatProduced = 1.7;
 
         private string _shortId
         {
@@ -18,10 +18,6 @@ namespace trestleBridge.Models.Animals
         public string Type { get; } = "Chicken";
 
         // Methods
-        public void Graze()
-        {
-            Console.WriteLine($"Chicken {this._shortId} just ate {this.GrassPerDay}kg of grass");
-        }
 
         public double Butcher()
         {

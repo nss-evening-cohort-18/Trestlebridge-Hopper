@@ -5,7 +5,7 @@ namespace trestleBridge.Models.Animals
     public class Sheep : IResource, IGrazing, IMeatProducing
     {
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 2.6;
+        private double _meatProduced = 5;
 
         private string _shortId
         {

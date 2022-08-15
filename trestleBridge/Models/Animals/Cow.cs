@@ -27,6 +27,7 @@ namespace trestleBridge.Models.Animals
         {
             return _meatProduced;
         }
+
         public override string ToString()
         {
             return $"Cow {this._shortId}. Mooo!";
